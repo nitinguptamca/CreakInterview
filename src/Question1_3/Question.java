@@ -50,11 +50,34 @@ public class Question {
 		str[tail] = 0;
 	}
 	
+	
+	public static void removeDuplicatesEff1(char[] str) {
+		if (str == null) return;
+		int len = str.length;
+		if (len < 2) return;
+
+		boolean[] hit = new boolean[256];
+		
+		int tail = 0;
+		for (int i = 0; i < len; ++i) {
+			if (!hit[str[i]]) {
+				str[tail] = str[i];
+				++tail;
+				hit[str[i]] = true;
+			}
+		}
+		str[tail] = 0;
+	}
+	
 	public static void main(String[] args) {
-		String s = "helloiloveyou";
+		String s = "helloiloveyoufsgsgweerwrwersdfsdf";
 		char[] arr = s.toCharArray();
 		removeDuplicatesEff(arr);
-		System.out.print(AssortedMethods.charArrayToString(arr));
+		System.out.println(AssortedMethods.charArrayToString(arr));
+		
+		removeDuplicatesEff1(arr);
+		System.out.println(AssortedMethods.charArrayToString(arr));
+		
 	}
 
 }

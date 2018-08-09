@@ -1,7 +1,5 @@
 package Question20_5;
 
-import java.util.Hashtable;
-
 import CareerCupLibrary.AssortedMethods;
 
 public class Question {

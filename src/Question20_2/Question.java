@@ -11,7 +11,7 @@ public class Question {
 			index = (int) (Math.random() * (cards.length - i)) + i; 
 			temp = cards[i]; 
 			cards[i] = cards[index];
-			cards[index] = temp; 
+			cards[index] = temp; ///// temp is now allocate 
 		} 
 	}
 	
