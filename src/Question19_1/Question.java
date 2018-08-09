@@ -21,8 +21,8 @@ public class Question {
 	}
 	
 	public static void main(String[] args) {
-		int a = 1672;
-		int b = 9332;
+		int a = 9332;
+		int b = 3453;
 		
 		System.out.println("a: " + a);
 		System.out.println("b: " + b);

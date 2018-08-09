@@ -9,6 +9,7 @@ public class Question {
 		char[] s_array = s.toCharArray();
 		for (char c : s_array) { // count number of each char in s.
 			if (letters[c] == 0) ++num_unique_chars;
+			System.out.println(letters[c]);
 			++letters[c];
 		}
 		for (int i = 0; i < t.length(); ++i) {
@@ -29,7 +30,7 @@ public class Question {
 	}
 	
 	public static void main(String[] args) {
-		String[][] pairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
+		String[][] pairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "leeoh"}};
 		for (String[] pair : pairs) {
 			String word1 = pair[0];
 			String word2 = pair[1];
