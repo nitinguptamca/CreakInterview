@@ -1,6 +1,7 @@
 package Question1_1;
 
 public class Question {
+	
 
 	public static boolean isUniqueChars(String str) {
 		int checker = 0;
