@@ -8,6 +8,7 @@ public class Question {
 		int num_completed_t = 0;
 		char[] s_array = s.toCharArray();
 		for (char c : s_array) { // count number of each char in s.
+			
 			if (letters[c] == 0) ++num_unique_chars;
 			System.out.println(letters[c]);
 			++letters[c];

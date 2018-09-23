@@ -18,6 +18,25 @@ package hard.interview.question.answer;
  *         + 100
  */
 public class CountTheNumberOf2s {
+	
+	private static int count2(int number) {
+		int remainder = 0, power = 1, position = 0, endDegit = 0, tmpPower = 0, countof2 = 0;
+		// 517 =5*100 +1*10+7
+		while (number > 0) {
+			remainder= number %10;
+			tmpPower =power /10;
+			countof2 = countof2 +remainder *position *tmpPower;
+			
+			if(remainder ==2) countof2 =countof2 +1;
+			if(remainder > 2) countof2 =countof2 +power;
+			power =power *10;
+			position++;
+			number =number /10;
+		}
+		System.out.println("countof2" + countof2);
+		return countof2;
+	}
+
 
 	public static int count2sR(int n) {
 		// Base case
@@ -71,7 +90,7 @@ public class CountTheNumberOf2s {
 			else if (digit > 2) {
 				countof2s += pow10_pos;
 			}
-			seeEndDigitNum = seeEndDigitNum + pow10_pos * digit;
+			/// seeEndDigitNum = seeEndDigitNum + pow10_pos * digit;
 			pow10_pos *= 10;
 			position++;
 			j = j / 10;
@@ -80,9 +99,32 @@ public class CountTheNumberOf2s {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(count2sR(50));
-		System.out.println(count2sI(517));
+		/// System.out.println(count2sR(513));
+		///System.out.println(count2sI(512));
+		 System.out.println(count2(532));
 
 	}
+	
+	
+	
 
+	/*private static int count2(int number) {
+		int remainder = 0, power = 1, position = 0, endDegit = 0, tmpPower = 0, countof2 = 0;
+		// 517 =5*100 +1*10+7
+		while (number > 0) {
+			remainder = number % 10;
+			tmpPower = power / 10;
+			countof2 = countof2 + remainder * position * tmpPower;
+			if (remainder == 2)
+				countof2 += 1;
+			if (remainder > 2)
+				countof2 += power;
+			power = power * 10;
+			position++;
+			number = number / 10;
+		}
+		System.out.println("countof2" + countof2);
+		return countof2;
+	}
+*/
 }
