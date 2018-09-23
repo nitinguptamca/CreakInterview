@@ -42,6 +42,7 @@ public class Question {
 	public static boolean isUniqueChars(String str) {
 		int checker = 0;
 		for (int i = 0; i < str.length(); ++i) {
+			System.out.println(str.charAt(i));
 			int val = str.charAt(i) - 'a';
 			int tmp = checker & (1 << val);
 			if (tmp > 0)
@@ -78,7 +79,7 @@ public class Question {
 	public static void main(String[] args) {
 		// System.out.println(isUniqueCharacters("n2tkm"));
 	///	System.out.println(isUniqueCharacters1("n2tkmn"));
-		System.out.println(returnUniqueChars("n2tkmnk2tqwert"));
+		System.out.println(isUniqueChars("n2tkmnk2tqwert"));
 
 	}
 

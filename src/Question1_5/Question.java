@@ -25,9 +25,23 @@ public class Question {
 			}
 		}
 	}
-	
+
+	public static String replaceChar(String s1) {
+		char a1 = '%';
+		char a2 = '0';
+		char a3 = '2';
+		String s3 = s1;
+		for (int i=0 ;i <s1.length() ;i++) {
+				s3.replace(' ', (char) (a1+a2+a3));
+		
+		}
+
+		return s3;
+	}
+
 	public static void main(String[] args) {
 		String str = "abc d e f";
+		System.out.println(replaceChar(str));
 		char[] arr = new char[str.length() + 3 * 2 + 1];
 		for (int i = 0; i < str.length(); i++) {
 			arr[i] = str.charAt(i);

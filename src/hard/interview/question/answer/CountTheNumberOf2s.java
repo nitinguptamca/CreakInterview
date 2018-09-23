@@ -18,25 +18,26 @@ package hard.interview.question.answer;
  *         + 100
  */
 public class CountTheNumberOf2s {
-	
+
 	private static int count2(int number) {
 		int remainder = 0, power = 1, position = 0, endDegit = 0, tmpPower = 0, countof2 = 0;
 		// 517 =5*100 +1*10+7
 		while (number > 0) {
-			remainder= number %10;
-			tmpPower =power /10;
-			countof2 = countof2 +remainder *position *tmpPower;
-			
-			if(remainder ==2) countof2 =countof2 +1;
-			if(remainder > 2) countof2 =countof2 +power;
-			power =power *10;
+			remainder = number % 10;
+			tmpPower = power / 10;
+			countof2 = countof2 + remainder * position * tmpPower;
+
+			if (remainder == 2)
+				countof2 = countof2 + 1;
+			if (remainder > 2)
+				countof2 = countof2 + power;
+			power = power * 10;
 			position++;
-			number =number /10;
+			number = number / 10;
 		}
 		System.out.println("countof2" + countof2);
 		return countof2;
 	}
-
 
 	public static int count2sR(int n) {
 		// Base case
@@ -99,32 +100,38 @@ public class CountTheNumberOf2s {
 	}
 
 	public static void main(String[] args) {
-		/// System.out.println(count2sR(513));
-		///System.out.println(count2sI(512));
-		 System.out.println(count2(532));
+		 System.out.println(count2sR(513));
+		/// System.out.println(count2sI(512));
+		// System.out.println(count2(532));
+		System.out.println(returnCountOf2(533));
 
 	}
-	
-	
-	
 
-	/*private static int count2(int number) {
-		int remainder = 0, power = 1, position = 0, endDegit = 0, tmpPower = 0, countof2 = 0;
-		// 517 =5*100 +1*10+7
+	private static int returnCountOf2(int number) {
+		int countOf2 = 0, tmpPower = 0, power = 1, position = 0, remainder = 0;
 		while (number > 0) {
 			remainder = number % 10;
 			tmpPower = power / 10;
-			countof2 = countof2 + remainder * position * tmpPower;
+			countOf2 = countOf2 + remainder * tmpPower * position;
 			if (remainder == 2)
-				countof2 += 1;
+				countOf2 = +1;
 			if (remainder > 2)
-				countof2 += power;
-			power = power * 10;
+				countOf2 += power;
 			position++;
+			power = power * 10;
 			number = number / 10;
+
 		}
-		System.out.println("countof2" + countof2);
-		return countof2;
+		return countOf2;
 	}
-*/
+
+	/*
+	 * private static int count2(int number) { int remainder = 0, power = 1,
+	 * position = 0, endDegit = 0, tmpPower = 0, countof2 = 0; // 517 =5*100 +1*10+7
+	 * while (number > 0) { remainder = number % 10; tmpPower = power / 10; countof2
+	 * = countof2 + remainder * position * tmpPower; if (remainder == 2) countof2 +=
+	 * 1; if (remainder > 2) countof2 += power; power = power * 10; position++;
+	 * number = number / 10; } System.out.println("countof2" + countof2); return
+	 * countof2; }
+	 */
 }
